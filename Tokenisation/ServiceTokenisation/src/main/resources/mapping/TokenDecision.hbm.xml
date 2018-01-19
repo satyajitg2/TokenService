@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.service.tokenisation.model.TokenDecision"
+		table="TokenDecision">
+
+		<id name="id" type="int" column="Id">
+			<generator class="increment" />
+		</id>
+		<property name="tableSetToUseByTokenSeeder" type="int">
+			<column name="TableSetToUseByTokenSeeder" not-null="false" />
+		</property>
+		<property name="tableSetToUseByTokenEngine" type="int">
+			<column name="TableSetToUseByTokenEngine" not-null="false" />
+		</property>
+		<property name="tokenToStartGenerateInteger" type="long">
+			<column name="TokenToStartGenerateInteger" not-null="false" />
+		</property>
+		<property name="tokenToStartGenerateString" type="string">
+			<column name="TokenToStartGenerateString" not-null="false" />
+		</property>
+
+		<property name="tokenToStartGenerateDateTime" type="timestamp">
+			<column name="TokenToStartGenerateDateTime" not-null="false" />
+		</property>
+
+		<property name="maxTokenToGenerateInteger" type="int">
+			<column name="MaxTokenToGenerateInteger" not-null="false" />
+		</property>
+		<property name="maxTokenToGenerateString" type="int">
+			<column name="MaxTokenToGenerateString" not-null="false" />
+		</property>
+		<property name="maxTokenToGenerateDateTime" type="int">
+			<column name="MaxTokenToGenerateDateTime" not-null="false" />
+		</property>
+		<property name="minTokenInInteger" type="int">
+			<column name="MinTokenInInteger" not-null="false" />
+		</property>
+		<property name="minTokenInString" type="int">
+			<column name="MinTokenInString" not-null="false" />
+		</property>
+		<property name="minTokenInDateTime" type="int">
+			<column name="MinTokenInDateTime" not-null="false" />
+		</property>
+		<property name="tokenRotationFreq" type="int">
+			<column name="Token_Rotation_Freq" not-null="false" />
+		</property>
+		<property name="nextRotationTime" type="timestamp">
+			<column name="Next_Rotation_time" not-null="false" />
+		</property>
+
+		<property name="configurationIdentifier" type="int">
+			<column name="ConfigurationIdentifier" not-null="false" />
+		</property>
+		<property name="updateCount" type="long">
+			<column name="UpdateCount" not-null="false" />
+		</property>
+		<property name="updatedDateTime" type="timestamp">
+			<column name="UpdatedDateTime" not-null="false" />
+		</property>
+		
+			</class>
+</hibernate-mapping>

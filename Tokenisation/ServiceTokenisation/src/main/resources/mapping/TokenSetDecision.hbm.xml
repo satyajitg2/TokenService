@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.service.tokenisation.model.TokenSetDecision" table="Table_Set">		
+		
+		<id name="tokenSet" type="int" column="tokenSet">
+			<generator class="increment"/>
+		</id>
+		<property name="tokenIntegerTable" type="string">
+			<column name="tokenIntegerTable" not-null="false" />
+		</property>
+		<property name="tokenStringTable" type="string">
+			<column name="TokenStringValueTable" not-null="false" />
+		</property>
+		<property name="tokenDateTimeTable" type="string">
+			<column name="TokenDateTimeValueTable" not-null="false" />
+		</property>
+	
+	</class>
+</hibernate-mapping>

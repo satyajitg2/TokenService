@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.service.tokenisation.model.TokenString" table="TokenString">
+		<id name="token" type="string" column="Token">
+		</id>
+
+		<property name="repeatableFlag" type="boolean">
+			<column name="RepeatableFlag" not-null="false" />
+		</property>
+		
+		<property name="tokenExpiryDate" type="date">
+			<column name="TokenExpiryDate" not-null="false" />
+		</property>
+		
+		<property name="tokenCreationDatetime" type="java.sql.Timestamp">
+			<column name="TokenCreationDateTime" not-null="false" />
+		</property>
+		
+		<property name="cSDValue" type="string">
+			<column name="CSDValue" not-null="false" />
+		</property>
+		
+		<property name="sourceFieldName" type="string">
+			<column name="SourceFieldName" not-null="false" />
+		</property>
+		
+		<property name="tokenMetadata" type="string">
+			<column name="TokenMetadata" not-null="false" />
+		</property>
+		
+		<property name="domainName" type="string">
+			<column name="DomainName" not-null="false" />
+		</property>
+		
+		<property name="systemName" type="string" >
+			<column name="SystemName" not-null="false" />
+		</property>
+
+		<property name="businessEntityName" type="string" >
+			<column name="BusinessEntityName" not-null="false" />
+		</property>
+		
+		<property name="targetFieldName" type="string">
+			<column name="TargetFieldName" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

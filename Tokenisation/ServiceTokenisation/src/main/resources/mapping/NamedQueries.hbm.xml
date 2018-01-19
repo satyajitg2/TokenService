@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<query name="authorisation.checkAuthorisation">
+		<![CDATA[Select count(*) from APIAuth apiAuth where upper(apiAuth.domain) = :DOMAINNAME and upper(apiAuth.apiName) = :APINAME]]>
+	</query>
+	
+	<query name="authorisation.checkAuthorisationUsingCert">
+		<![CDATA[Select count(*) from APIAuth apiAuth where upper(apiAuth.domain) = :DOMAINNAME and upper(apiAuth.apiName) = :APINAME and upper(apiAuth.systemName) = :CALLINGSYSTENMANE]]>
+	</query>
+
+	<query name="tokenisation.getConfigurationForBusinessEntity">
+		<![CDATA[Select c.configurationIdentifier FROM Configuration c WHERE  upper(c.businessEntityName) = :BUSINESSENTITYNAME]]>
+	</query>
+
+	<query name="tokenisation.getTokenSeedTableSetForBusinessEntity">
+		<![CDATA[SELECT td.tableSetToUseByTokenEngine FROM TokenDecision td WHERE td.configurationIdentifier = :CONFIGURATIONID]]>
+	</query>
+
+	<query name="getAuthorizedBusinessEntityList">
+		<![CDATA[ select distinct apiAuth.businessEntity FROM APIAuth apiAuth WHERE upper(apiAuth.domain) = :DomainName and upper(apiAuth.apiName) = :APIName]]>
+	</query>
+	
+	
+	   
+      <!-- START: Queries for Token Seeder Service -->
+    <query name="config.buildConfigForBusinessEntity">
+		<![CDATA[FROM Configuration WHERE upper(businessEntityName)=:OWNINGBUSINESSENTITY]]>
+	</query>
+   
+    <query name="decision.getSet">
+		<![CDATA[FROM TokenSetDecision WHERE tokenSet=:TABLEINUSE)]]>
+	</query>
+   <sql-query name="getTokenDecisionDetails"> 
+	<return alias="TokenDecision" class="com.service.tokenisation.model.TokenDecision"/>   	
+    	<![CDATA[SELECT * FROM TokenDecision WHERE ConfigurationIdentifier=:CONFIGIDENTIFIER]]>
+	</sql-query>
+   
+	<query name="update.TokenDecision.TokenToStartGenerateString">
+		<![CDATA[UPDATE TokenDecision SET TokenToStartGenerateString =:TOKEN WHERE ConfigurationIdentifier =:CONFIG_IDENTIFIER]]>
+	</query>
+	
+    <!-- END: Queries for Token Seeder Service -->
+	
+</hibernate-mapping>

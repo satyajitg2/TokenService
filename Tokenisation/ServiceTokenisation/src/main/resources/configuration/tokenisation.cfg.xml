@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.default_schema">dbo</property>
+		<property name="show_sql">true</property>
+		<mapping resource="mapping/TokenSetDecision.hbm.xml" />
+		<mapping resource="mapping/TokenDecision.hbm.xml" />
+
+		<mapping resource="mapping/SeedString1.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedInteger1.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedDateTime1.hbm.xml"></mapping>
+
+		<mapping resource="mapping/SeedString2.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedInteger2.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedDateTime2.hbm.xml"></mapping>
+
+		<mapping resource="mapping/SeedString3.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedInteger3.hbm.xml"></mapping>
+		<mapping resource="mapping/SeedDateTime3.hbm.xml"></mapping>
+
+		<mapping resource="mapping/APIAuth.hbm.xml"></mapping>
+		<mapping resource="mapping/TokenInteger.hbm.xml"></mapping>
+		<mapping resource="mapping/TokenString.hbm.xml"></mapping>
+		<mapping resource="mapping/TokenDateTime.hbm.xml"></mapping>
+		<mapping resource="mapping/Configuration.hbm.xml"></mapping>
+		<mapping resource="mapping/NamedQueries.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>
