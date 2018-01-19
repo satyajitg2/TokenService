@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+  <session-factory>
+   <!--  <property name="hibernate.connection.url">jdbc:sqlserver://10.118.14.101:1433;databaseName=Tokenisation</property> -->  
+   
+	<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+	   
+	  <!--  <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property> -->	 
+	   
+	 
+<!-- 	  <property name="hibernate.connection.url">jdbc:sqlserver://10.118.14.105:1433;databaseName=Tokenisation</property>	 -->
+<!-- 	  <property name="hibernate.connection.username">adminuser</property> -->
+<!-- 	  <property name="hibernate.connection.password">mounty@15</property>  -->
+	  
+	   
+      <property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        
+	  
+	  <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+	  <property name="hibernate.default_schema">dbo</property>
+	  <property name="show_sql">false</property>
+	  <property name="hibernate.jdbc.batch_size"> 1000 </property> 
+		<property name="hibernate.flushMode">ALWAYS</property>
+		<!--  Set 1 -->
+	    <mapping resource="mapping/SeedInteger1.hbm.xml"/>
+	    <mapping resource="mapping/SeedDateTime1.hbm.xml"/>
+	    <mapping resource="mapping/SeedString1.hbm.xml"/>
+	    <!--  Set 2 -->
+	    <mapping resource="mapping/SeedInteger2.hbm.xml"/>
+	    <mapping resource="mapping/SeedDateTime2.hbm.xml"/>
+	    <mapping resource="mapping/SeedString2.hbm.xml"/>
+	    <!--  Set 3 -->
+	    <mapping resource="mapping/SeedInteger3.hbm.xml"/>
+	    <mapping resource="mapping/SeedDateTime3.hbm.xml"/>
+	    <mapping resource="mapping/SeedString3.hbm.xml"/>
+	    
+	    <!-- Configuration setup -->
+	    <mapping resource="mapping/Configuration.hbm.xml"/>
+	    <mapping resource="mapping/TokenSetDecision.hbm.xml"/>
+	    <mapping resource="mapping/TokenDecision.hbm.xml"/>    
+	    
+	            
+	    
+	    <mapping resource="mapping/TSNamedQueries.hbm.xml"/>
+   
+</session-factory> 
+
+
+<!--
+<session-factory>
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>  
+
+  <property name="hibernate.connection.username">service</property>
+  <property name="hibernate.connection.password">service123</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+  
+
+  
+  <property name="show_sql">true</property>
+<property name="hibernate.flushMode">ALWAYS</property>
+    <mapping resource="mapping/SeedInteger1.hbm.xml"/>
+    <mapping resource="mapping/SeedDateTime1.hbm.xml"/>
+    <mapping resource="mapping/SeedString1.hbm.xml"/>
+    
+    <mapping resource="mapping/SeedInteger2.hbm.xml"/>
+    <mapping resource="mapping/SeedDateTime2.hbm.xml"/>
+    <mapping resource="mapping/SeedString2.hbm.xml"/>
+    
+    <mapping resource="mapping/SeedInteger3.hbm.xml"/>
+    <mapping resource="mapping/SeedDateTime3.hbm.xml"/>
+    <mapping resource="mapping/SeedString3.hbm.xml"/>
+    
+    <mapping resource="mapping/Configuration.hbm.xml"/>
+    <mapping resource="mapping/TokenSetDecision.hbm.xml"/>
+    <mapping resource="mapping/TokenDecision.hbm.xml"/>
+    
+    <mapping resource="mapping/API.hbm.xml"/>
+    <mapping resource="mapping/APIAccess.hbm.xml"/>
+    <mapping resource="mapping/BusinessEntity.hbm.xml"/>
+    
+    <mapping resource="mapping/Domain.hbm.xml"/>
+    <mapping resource="mapping/Systems.hbm.xml"/>
+    <mapping resource="mapping/TokenVault.hbm.xml"/>
+    
+    <mapping resource="mapping/TSNamedQueries.hbm.xml"/>
+        
+</session-factory>
+
+-->
+
+</hibernate-configuration>

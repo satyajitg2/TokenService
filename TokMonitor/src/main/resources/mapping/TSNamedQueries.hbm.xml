@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<query name="config.getAll">
+		<![CDATA[FROM Configuration]]>
+	</query>
+
+	<query name="config.buildConfigForBusinessEntity">
+		<![CDATA[FROM Configuration WHERE businessEntityName=:OWNINGBUSINESSENTITY]]>
+	</query>
+
+
+	<!-- <query name="config.detail.byRegion"> <![CDATA[SELECT ConfigurationIdentifier 
+		FROM Configuration,BusinessEntity WHERE Configuration.businessEntityIdentifier=BusinessEntity.BusinessEntityIdentifier 
+		AND BusinessEntity.BusinessEntityName=:OWNINGBUSINESSENTITY]]> </query> -->
+
+
+	<query name="decision.getSet">
+		<![CDATA[FROM TokenSetDecision WHERE tokenSet=:TABLEINUSE)]]>
+	</query>
+
+
+	<query name="getTokenDecisionDetails"> 
+	   	
+    	<![CDATA[FROM TokenDecision WHERE ConfigurationIdentifier=:CONFIGIDENTIFIER]]>
+	</query>
+
+	<query name="update.TokenDecision.TokenToStartGenerateInteger">
+		<![CDATA[UPDATE TokenDecision SET TokenToStartGenerateInteger =:TOKEN WHERE ConfigurationIdentifier =:CONFIG_IDENTIFIER]]>
+	</query>
+	
+	<query name="update.TokenDecision.TokenToStartGenerateString">
+		<![CDATA[UPDATE TokenDecision SET TokenToStartGenerateString =:TOKEN WHERE ConfigurationIdentifier =:CONFIG_IDENTIFIER]]>
+	</query>
+
+
+
+</hibernate-mapping>
