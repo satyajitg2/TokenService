@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.service.tokenseeder.model.Configuration" table="Configuration">
+		<id name="configurationIdentifier" type="int" column="ConfigurationIdentifier">
+			<generator class="increment" />
+		</id>
+		<property name="stringVaultIdentifer" type="string">
+			<column name="StringVaultIdentifer" not-null="false" />
+		</property>
+		<property name="integerTokenStartValue" type="long">
+			<column name="IntegerTokenStartValue" not-null="false" />
+		</property>
+		<property name="integerTokenEndValue" type="long">
+			<column name="IntegerTokenEndValue" not-null="false" />
+		</property>
+		<property name="dateTimeTokenYearStart" type="int">
+			<column name="DateTimeTokenYearStart" not-null="false" />
+		</property>
+		<property name="dateTimeTokenYearEnd" type="int">
+			<column name="DateTimeTokenYearEnd" not-null="false" />
+		</property>
+		<property name="businessEntityName" type="string">
+			<column name="BusinessEntityName" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>
